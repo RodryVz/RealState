@@ -12,7 +12,7 @@ export function Header() {
 
     return (
         <div className="container mx-auto my-5">
-            <div className="flex items-center justify-center px-5 md:px-0">
+            <div className="flex items-center justify-between px-5 md:px-0">
                 <Link href="/">
                    <h1 className="font-medium">Real State</h1>
                 </Link>

@@ -1,11 +1,36 @@
 import { useEffect, useState } from "react"
 import { dataHeader } from "../Header/Header.data"
 import { NavbarProps } from "./Navbar.types"
+import { AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 
 export function Navbar(props: NavbarProps) {
     const {openMobileMenu} = props;
+    const [isScrolling, setIsScrolling] = useState(false)
+
+    const handleScroll = ()=> {
+        if (window.scrollY >= window.innerHeight - 600){
+           setIsScrolling(true)
+        } else{
+            setIsScrolling(false)
+        }
+    }
+
+    useEffect(()=> {
+        window.addEventListener("scroll", handleScroll)
+        return ()=> {
+            window.removeEventListener("scroll", handleScroll)
+        }
+    }, [])
+
     return (
-        <p>NavBar</p>
+        <AnimatePresence>
+            <div className={`${openMobileMenu ? 'absolute z-[1] left-0 top-20 bg-white right-0 w-full px-4 py-4' : 'hidden'} gap-5 md:flex`}>
+               {dataHeader.map(({id, name, link})=>(
+                <Link key={id} href={link} className="block hover:text-secondary hover:border-b-[1px]">{name}</Link>
+               ))}
+            </div>
+        </AnimatePresence>
     )
 }
