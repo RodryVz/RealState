@@ -622,6 +622,10 @@ video {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .my-5 {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
@@ -634,15 +638,17 @@ video {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }
-.my-4 {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
 .-mt-2 {
   margin-top: -0.5rem;
 }
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+.mb-7 {
+  margin-bottom: 1.75rem;
 }
 .ml-1 {
   margin-left: 0.25rem;
@@ -659,14 +665,14 @@ video {
 .mt-2 {
   margin-top: 0.5rem;
 }
-.mb-10 {
-  margin-bottom: 2.5rem;
-}
-.mb-7 {
-  margin-bottom: 1.75rem;
-}
 .mt-7 {
   margin-top: 1.75rem;
+}
+.mb-8 {
+  margin-bottom: 2rem;
+}
+.mr-4 {
+  margin-right: 1rem;
 }
 .block {
   display: block;
@@ -683,14 +689,17 @@ video {
 .h-\[200px\] {
   height: 200px;
 }
-.h-screen {
-  height: 100vh;
-}
 .h-\[240px\] {
   height: 240px;
 }
 .h-auto {
   height: auto;
+}
+.h-screen {
+  height: 100vh;
+}
+.h-\[700px\] {
+  height: 700px;
 }
 .max-h-full {
   max-height: 100%;
@@ -701,8 +710,14 @@ video {
 .w-\[230px\] {
   width: 230px;
 }
+.w-\[300px\] {
+  width: 300px;
+}
 .w-\[90\%\] {
   width: 90%;
+}
+.w-auto {
+  width: auto;
 }
 .w-fit {
   width: -moz-fit-content;
@@ -713,12 +728,6 @@ video {
 }
 .w-screen {
   width: 100vw;
-}
-.w-\[300px\] {
-  width: 300px;
-}
-.w-auto {
-  width: auto;
 }
 .max-w-3xl {
   max-width: 48rem;
@@ -731,6 +740,9 @@ video {
 }
 .max-w-xl {
   max-width: 36rem;
+}
+.max-w-2xl {
+  max-width: 42rem;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -1016,12 +1028,12 @@ html {
     width: 500px;
   }
 
-  .md\:grid-cols-4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
   .md\:flex-row {
@@ -1032,17 +1044,22 @@ html {
     justify-content: center;
   }
 
-  .md\:gap-5 {
-    gap: 1.25rem;
-  }
-
   .md\:gap-28 {
     gap: 7rem;
+  }
+
+  .md\:gap-5 {
+    gap: 1.25rem;
   }
 
   .md\:px-0 {
     padding-left: 0px;
     padding-right: 0px;
+  }
+
+  .md\:px-36 {
+    padding-left: 9rem;
+    padding-right: 9rem;
   }
 
   .md\:px-40 {
@@ -1055,9 +1072,9 @@ html {
     padding-bottom: 8rem;
   }
 
-  .md\:px-36 {
-    padding-left: 9rem;
-    padding-right: 9rem;
+  .md\:py-44 {
+    padding-top: 11rem;
+    padding-bottom: 11rem;
   }
 
   .md\:pt-0 {
