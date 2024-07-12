@@ -956,6 +956,9 @@ video {
 .duration-300 {
   transition-duration: 300ms;
 }
+.duration-200 {
+  transition-duration: 200ms;
+}
 
 html {
   scroll-behavior: smooth;
