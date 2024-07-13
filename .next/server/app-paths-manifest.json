@@ -1,4 +1,5 @@
 {
   "/page": "app/page.js",
+  "/properties/(property)/[page]/page": "app/properties/(property)/[page]/page.js",
   "/favicon.ico/route": "app/favicon.ico/route.js"
 }
