@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { dataHeader } from "../Header/Header.data"
 import { NavbarProps } from "./Navbar.types"
-import { animate, AnimatePresence } from "framer-motion";
+import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import {motion} from "framer-motion"
 
@@ -40,7 +40,7 @@ export function Navbar(props: NavbarProps) {
                             {dataHeader.map(({id, name, link}) =>
                                <Link key={id} href={link} className="hover:text-secondary hover:border-b-[1px] hover: border-secondary">{name}</Link>
                             )}
-                            <Link href="/Login" className="px-3 py-2 text-white rounded-lg bg-secondary hover:bg-black">Login</Link>
+                            
                         </div>
 
                 </motion.nav>

@@ -18,7 +18,8 @@ export function Properties() {
 
     return (
         <Transition className="px-4 my-8 md:py-32 md:px-40">
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
+            <h2 className="text-3xl font-semibold text-center mb-8 md:mb-12">Propiedades</h2>
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-4" id="propierties">
                 {dataFilteredHouses.map(({id, location, price, bedrooms, bathroom, image, star, meters})=>(
                     <Link key={id} href={`/properties/${id}`}
                     className="shadow-light hover:shadow-xl rounded-2xl transition-all duration-300 cursor-pointer">

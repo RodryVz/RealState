@@ -8,7 +8,7 @@ import { Navbar } from "../Navbar"
 
 
 export function Header() {
-    const [openMobileMenu, setOpenobileMenu] = useState(false)
+    const [openMobileMenu, setOpenMobileMenu] = useState(false)
 
     return (
         <div className="container mx-auto my-5">
@@ -16,7 +16,7 @@ export function Header() {
                 <Link href="/">
                    <h1 className="font-medium">Real State</h1>
                 </Link>
-                <CiMenuFries className="block text-2xl md:hidden" onClick={()=> setOpenobileMenu(!openMobileMenu)}/>
+                <CiMenuFries className="block text-2xl md:hidden" onClick={()=> setOpenMobileMenu(!openMobileMenu)}/>
                 
                 <Navbar openMobileMenu = {openMobileMenu}/>
 
@@ -25,7 +25,7 @@ export function Header() {
                     <BsTelephone/>
                     <span className="hidden md:block">+5436248855996</span>
                     </Link>
-                    <Link href="/login" className="px-3 py-2 text-white rounded-lg bg-secondary hover:bg-black">Login</Link>
+                    
                 </div>
             </div>
         </div>
