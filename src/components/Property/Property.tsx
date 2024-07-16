@@ -1,8 +1,9 @@
 import { formatPrice } from "@/utils/formatPrice";
 import { PropertyProps } from "./Property.types";
-import { LiaBedSolid, LiaStarSolid } from "react-icons/lia";
+import { LiaBathSolid, LiaBedSolid, LiaRulerCombinedSolid, LiaStarSolid } from "react-icons/lia";
 import { TfiLocationPin } from "react-icons/tfi";
 import Image from "next/image";
+import { Form } from "../Form";
 
 export function Property(props: PropertyProps) {
       const {house} = props;
@@ -37,8 +38,18 @@ export function Property(props: PropertyProps) {
                                 <LiaBedSolid/>
                                 <span className="ml-2">{house.bedrooms}</span>
                             </div>
+                            <div className="flex items-center justify-center px-2 py-1 rounded-lg bg-slate-300/30"> 
+                                <LiaBathSolid/>
+                                <span className="ml-2">{house.bathroom}</span>
+                            </div>
+                            <div className="flex items-center justify-center px-2 py-1 rounded-lg bg-slate-300/30"> 
+                                <LiaRulerCombinedSolid/>
+                                <span className="ml-2">{house.meters}</span>
+                            </div>
                         </div>
+                    <div className="my-3">{house.description}</div>
                 </div>
+                <Form/>
             </div>
                 <p>{house.location}</p>
         </main>
