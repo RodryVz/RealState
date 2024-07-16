@@ -2,6 +2,8 @@
 
 import { Transition } from "../Transition"
 import { Slider } from "./Slider"
+import { Lumiflex } from "uvcanvas"
+
 
 export function Services() {
     return (
@@ -17,5 +19,6 @@ export function Services() {
                 <Slider/>
             </div>
         </Transition>
+        
     )
 }

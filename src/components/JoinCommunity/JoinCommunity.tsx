@@ -1,5 +1,6 @@
 import { FaRegPaperPlane } from "react-icons/fa";
 import { Transition } from "../Transition";
+import { Lumiflex } from "uvcanvas";
 
 export function JoinCommunity() {
     return (

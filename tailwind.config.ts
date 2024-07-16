@@ -11,8 +11,11 @@ const config: Config = {
       colors: {
         secondary: "#727C73",
       },
+      backgroundColor: {
+        'default': '#f3f4f1', // Cambia este color al que prefieras
+      },
       backgroundImage: {
-        banner: "url('/assets/house-banner.png')",
+        banner: "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/assets/img-banner.jpg')",
       },
       boxShadow: {
         light: "0px 4px 30px rgba(0, 0, 0, 0.08)",

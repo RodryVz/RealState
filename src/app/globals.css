@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: #EBEDEF  /* Cambia #ffffff por el color de fondo que desees */
+}
 html {
   scroll-behavior: smooth;
 }

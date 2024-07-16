@@ -1,3 +1,4 @@
 {
+  "/properties/(property)/[page]/page": "app/properties/(property)/[page]/page.js",
   "/page": "app/page.js"
 }
