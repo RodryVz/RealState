@@ -2,23 +2,32 @@
 
 import { Transition } from "../Transition"
 import { Slider } from "./Slider"
-import { Lumiflex } from "uvcanvas"
 
 
 export function Services() {
     return (
-        <Transition className="grid px-4 py-8 md:py-46 md:px-36 md:grid-cols-2 md:gap-28" >
-            <div className="max-w-xl mb-7" id="services">
-                <h4 className="text-secondary">Servicios</h4>
-                <h2 className="my-4 text-3xl font-semibold"> Promociona tu vivienda para alquilarla o venderla </h2>
-                <p className="mb-10 mt-7">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo eaque, 
-                    dolorum nihil labore assumenda fugiat odio sint commodi voluptate nisi
-                    architecto, natus facilis qui neque illo at similique aliquid tempore.</p>
-            </div>
-            <div className="flex items-center justify-center">
-                <Slider/>
+        <Transition className="bg-gray-100 py-16 md:py-24">
+            <div className="container mx-auto px-4 md:px-8">
+                <div className="grid md:grid-cols-2 gap-12 md:gap-16 items-center">
+                    <div className="max-w-xl" id="services">
+                        <h4 className="text-secondary font-semibold text-lg mb-2">Nuestros Servicios</h4>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-800">
+                            Promociona tu vivienda para alquilarla o venderla
+                        </h2>
+                        <p className="text-gray-600 text-lg leading-relaxed mb-8">
+                            Ofrecemos soluciones integrales para promocionar tu propiedad de manera efectiva. 
+                            Nuestro equipo de expertos utiliza estrategias de marketing innovadoras y 
+                            tecnología de punta para maximizar la visibilidad de tu vivienda en el mercado.
+                        </p>
+                        <button className="bg-secondary text-white font-semibold py-3 px-6 rounded-full hover:bg-opacity-90 transition duration-300 hover:bg-black">
+                            Conoce más
+                        </button>
+                    </div>
+                    <div className="flex items-center justify-center bg-white rounded-lg shadow-lg p-6">
+                        <Slider />
+                    </div>
+                </div>
             </div>
         </Transition>
-        
     )
 }

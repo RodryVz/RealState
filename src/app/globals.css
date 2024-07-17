@@ -3,8 +3,9 @@
 @tailwind utilities;
 
 body {
-  background-color: #EBEDEF  /* Cambia #ffffff por el color de fondo que desees */
+  background-color: #e1e2e2;
 }
+
 html {
   scroll-behavior: smooth;
 }
@@ -20,4 +21,64 @@ html {
 .leaflet-popup-content-wrapper,
 .leaflet-popup-tip {
   border-radius: 0.5rem;
+}
+
+/* Nuevas animaciones */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in-down {
+    animation: fadeInDown 1s ease-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out 0.5s both;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 1s ease-out 1s both;
+  }
+}
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+.animate-blob {
+  animation: blob 7s infinite;
+}
+
+.animation-delay-2000 {
+  animation-delay: 2s;
 }

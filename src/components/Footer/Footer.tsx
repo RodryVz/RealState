@@ -4,27 +4,46 @@ import Link from 'next/link'
 
 export function Footer() {
     return (
-        <div className='px-4 py-6 bg-black/90 md:py-20 md:px-36'>
-            <div className='grid gap-6 grid-cols-2 md:grid-cols-[1fr, 1fr, 1fr,_400px] text-white'>
-                {dataFooter.map(({id, links})=>(
-                    <div key={id}>
-                        {links.map(({id, name, link})=>(
-                            <Link key={id} href={link} className="block mb-4">{name}</Link>
-                        ))}
-                    </div>
-                ))}
-                <div className='md:text-right'>
-                    <h4 className='mb-4 text-xl font-semibold'>Real State</h4>
-                    <p>Calle Siempre Vivas</p>
-                    <p>Madrid, Spain</p>
-                    <div className='flex gap-4 mt-4 md:justify-end'>
-                       <LiaInstagram className='text-2xl cursor-pointer' href='#!'/>
-                       <LiaLinkedinIn className='text-2xl cursor-pointer' href='#!'/>
-                       <LiaPinterestP className='text-2xl cursor-pointer' href='#!'/>
-                       <LiaYoutube className='text-2xl cursor-pointer' href='#!'/>
+        <footer className='bg-gray-800 text-gray-300'>
+            <div className='container mx-auto px-4 py-12 md:py-20'>
+                <div className='grid gap-8 md:grid-cols-4 lg:grid-cols-5'>
+                    {dataFooter.map(({id, links}) => (
+                        <div key={id} className="space-y-4">
+                            {links.map(({id, name, link}) => (
+                                <Link 
+                                    key={id} 
+                                    href={link} 
+                                    className="block hover:text-white transition duration-300"
+                                >
+                                    {name}
+                                </Link>
+                            ))}
+                        </div>
+                    ))}
+                    <div className='md:col-span-2 lg:col-span-2'>
+                        <h4 className='text-2xl font-bold text-white mb-6'>Real State</h4>
+                        <p className='mb-2'>Calle Siempre Vivas</p>
+                        <p className='mb-6'>Madrid, Spain</p>
+                        <div className='flex gap-6'>
+                            <a href="#!" className="hover:text-white transition duration-300">
+                                <LiaInstagram className='text-3xl' />
+                            </a>
+                            <a href="#!" className="hover:text-white transition duration-300">
+                                <LiaLinkedinIn className='text-3xl' />
+                            </a>
+                            <a href="#!" className="hover:text-white transition duration-300">
+                                <LiaPinterestP className='text-3xl' />
+                            </a>
+                            <a href="#!" className="hover:text-white transition duration-300">
+                                <LiaYoutube className='text-3xl' />
+                            </a>
+                        </div>
                     </div>
                 </div>
+                <div className='mt-12 pt-8 border-t border-gray-700 text-center'>
+                    <p>&copy; {new Date().getFullYear()} Real State. Todos los derechos reservados.</p>
+                </div>
             </div>
-        </div>
+        </footer>
     )
 }

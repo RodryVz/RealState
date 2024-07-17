@@ -18,46 +18,44 @@ export function Properties() {
 
     return (
         <Transition className="px-4 my-8 md:py-32 md:px-40">
-            <h2 className="text-3xl font-semibold text-center mb-8 md:mb-12">Propiedades</h2>
-            <div className="grid grid-cols-2 gap-4 md:grid-cols-4" id="propierties">
+            <h2 className="text-4xl font-bold text-center mb-12 text-secondary">Propiedades Destacadas</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8" id="propierties">
                 {dataFilteredHouses.map(({id, location, price, bedrooms, bathroom, image, star, meters})=>(
                     <Link key={id} href={`/properties/${id}`}
-                    className="shadow-light hover:shadow-xl rounded-2xl transition-all duration-300 cursor-pointer">
-                       <div className="relative -z-[1]">
-                           <div className="relative">
-                               <div className="absolute flex item-center px-2 py-1 rounded-lg bg-slate-50 top-2 right-2 text-secondary">
-                                    <LiaStarSolid/>
-                                    <span className="ml-1 font-semibold"></span>
-                               </div>
-                               <Image src={`/assets/properties/${image}`} alt="Location" width={150} height={150}
-                                    className="object-cover w-full max-h-full h-[200px] rounded-2xl" />
-                                <div className="px-3 py-5">
-                                    <p className="text-secondary">{location}</p>
-                                    <p className="font-semibold">{formatPrice(price)}</p>
-                                    <div className="gap-4 mt-2 xl:flex">
-                                        <div className="flex items-center justify-center px-2 py-1 rounded-lg my-2 bg-slate-300/30">
-                                        <LiaBedSolid/>
-                                            <span className="ml-2">{bedrooms}</span>
-                                        </div>
-                                        <div className="flex items-center justify-center px-2 py-1 rounded-lg my-2 bg-slate-300/30">
-                                        <LiaBathSolid/>
-                                            <span className="ml-2">{bathroom}</span>
-                                        </div>
-                                        <div className="flex items-center justify-center px-2 py-1 rounded-lg my-2 bg-slate-300/30">
-                                        <LiaRulerCombinedSolid/>
-                                            <span className="ml-2">{meters}</span>
-                                        </div>
-                                    </div>
-                                </div>
+                    className="bg-gray-400 shadow-lg hover:shadow-2xl rounded-3xl transition-all duration-300 cursor-pointer transform hover:scale-105">
+                       <div className="relative overflow-hidden rounded-t-3xl">
+                           <div className="absolute flex items-center px-3 py-2 rounded-full bg-white top-4 right-4 text-secondary z-10 shadow-md">
+                                <LiaStarSolid className="text-yellow-400"/>
+                                <span className="ml-1 font-semibold">{star}</span>
                            </div>
-                        </div>
+                           <Image src={`/assets/properties/${image}`} alt={location} width={400} height={300}
+                                className="object-cover w-full h-64 transition-transform duration-300 hover:scale-110" />
+                       </div>
+                       <div className="p-6 bg-gray-200 rounded-b-3xl">
+                            <p className="text-secondary font-medium mb-2">{location}</p>
+                            <p className="text-2xl font-bold mb-4 text-gray-800">{formatPrice(price)}</p>
+                            <div className="flex flex-wrap gap-4 mt-4">
+                                <div className="flex items-center px-3 py-2 rounded-full bg-gray-300 text-gray-700 shadow-sm">
+                                    <LiaBedSolid className="mr-2"/>
+                                    <span>{bedrooms} Dormitorios</span>
+                                </div>
+                                <div className="flex items-center px-3 py-2 rounded-full bg-gray-300 text-gray-700 shadow-sm">
+                                    <LiaBathSolid className="mr-2"/>
+                                    <span>{bathroom} Baños</span>
+                                </div>
+                                <div className="flex items-center px-3 py-2 rounded-full bg-gray-300 text-gray-700 shadow-sm">
+                                    <LiaRulerCombinedSolid className="mr-2"/>
+                                    <span>{meters} m²</span>
+                                </div>
+                            </div>
+                       </div>
                     </Link>
                 ))}
             </div>
-            <div className="text-center my-7">
+            <div className="text-center mt-12">
                 {counterHouses < dataProperties.length &&(
-                <button className="px-6 py-6 text-white transition-all duration-150 cursor-pointer bg-secondary rounded-xl hover:bg-black"
-            onClick={loadMoreHouses}>Ver mas viviendas</button>
+                <button className="px-8 py-4 text-lg font-semibold text-white transition-all duration-300 bg-secondary rounded-full hover:bg-black hover:shadow-lg transform hover:scale-105"
+            onClick={loadMoreHouses}>Ver más viviendas</button>
             )}
             </div>
         </Transition>

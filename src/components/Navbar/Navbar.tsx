@@ -42,7 +42,6 @@ export function Navbar(props: NavbarProps) {
                             )}
                             
                         </div>
-
                 </motion.nav>
             ) : (
             <div className={`${openMobileMenu ? 'absolute z-[1] left-0 top-20 bg-white right-0 w-full px-4 py-4' : 'hidden'} gap-5 md:flex`}>
