@@ -40,10 +40,10 @@ export function About() {
                         <div className="lg:w-1/2 relative">
                             <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
                                 <Image 
-                                    src="/assets/house.jpeg" 
+                                    src="/assets/inter-hause.jpg" 
                                     alt="Nuestra propiedad destacada" 
-                                    width={600} 
-                                    height={400} 
+                                    width={300} 
+                                    height={250} 
                                     className="w-full h-auto object-cover"
                                     priority
                                 />

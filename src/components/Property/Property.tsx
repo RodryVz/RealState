@@ -6,53 +6,69 @@ import Image from "next/image";
 import { Form } from "../Form";
 
 export function Property(props: PropertyProps) {
-      const {house} = props;
+    const { house } = props;
 
     return (
-        <main className="max-w-5xl mx-auto">
-            <div className="grid md:grid-cols-[70%,1fr] my-3 py-5">
-                <div className="px-6">
-                    <h1 className="text-3xl mb-4 text-secondary flex justify-between">
-                        <span>House {house.id}</span>
-                        <span className="font-semibold">{formatPrice(house.price)}</span>
-                    </h1>
-                    <div className="flex gap-5 my-4">
-                        <h2 className="flex gap-3 text-xl items-center">
-                            <TfiLocationPin/>
+        <main className="max-w-7xl mx-auto px-4 py-12 md:py-24">
+            <div className="grid lg:grid-cols-[1.5fr,1fr] gap-12">
+                <div className="space-y-8">
+                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                        <h1 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2 sm:mb-0">
+                            House {house.id}
+                        </h1>
+                        <span className="text-2xl md:text-3xl font-semibold text-secondary">
+                            {formatPrice(house.price)}
+                        </span>
+                    </div>
+
+                    <div className="flex flex-wrap items-center gap-4">
+                        <h2 className="flex items-center text-lg text-gray-600">
+                            <TfiLocationPin className="mr-2 text-secondary" />
                             {house.location}
                         </h2>
-                        <div className="flex items-center px-2 py-1 rounded-lg bg-secondary top-2 right-2 text-white">
-                            <LiaStarSolid/>
-                            <span className="ml-1 font-semibold">{house.star}</span>
+                        <div className="flex items-center px-3 py-1 rounded-full bg-secondary text-white">
+                            <LiaStarSolid className="mr-1 text-yellow-400" />
+                            <span className="font-semibold">{house.star}</span>
                         </div>
                     </div>
-                <Image src={`/assets/properties/${house.image}`}
-                        alt={`Casa en ${house.location}`}
-                        width={1200}
-                        height={1200}
-                        className="w-full h-auto rounded-2xl"
-                        priority
+
+                    <div className="relative rounded-xl overflow-hidden shadow-lg">
+                        <Image 
+                            src={`/assets/properties/${house.image}`}
+                            alt={`Casa en ${house.location}`}
+                            width={1200}
+                            height={800}
+                            className="w-full h-auto object-cover"
+                            priority
                         />
-                        <div className="gap-4 lg:flex mt-4">
-                            <div className="flex items-center justify-center px-2 py-1 rounded-lg bg-slate-300/30"> 
-                                <LiaBedSolid/>
-                                <span className="ml-2">{house.bedrooms}</span>
+                    </div>
+
+                    <div className="flex flex-wrap gap-4">
+                        {[
+                            { icon: LiaBedSolid, value: house.bedrooms, label: "Dormitorios" },
+                            { icon: LiaBathSolid, value: house.bathroom, label: "Baños" },
+                            { icon: LiaRulerCombinedSolid, value: house.meters, label: "m²" }
+                        ].map((item, index) => (
+                            <div key={index} className="flex items-center px-4 py-2 rounded-lg bg-gray-100 text-gray-700">
+                                <item.icon className="mr-2 text-secondary" />
+                                <span className="font-semibold">{item.value}</span>
+                                <span className="ml-1 text-sm">{item.label}</span>
                             </div>
-                            <div className="flex items-center justify-center px-2 py-1 rounded-lg bg-slate-300/30"> 
-                                <LiaBathSolid/>
-                                <span className="ml-2">{house.bathroom}</span>
-                            </div>
-                            <div className="flex items-center justify-center px-2 py-1 rounded-lg bg-slate-300/30"> 
-                                <LiaRulerCombinedSolid/>
-                                <span className="ml-2">{house.meters}</span>
-                            </div>
-                        </div>
-                    <div className="my-3">{house.description}</div>
+                        ))}
+                    </div>
+
+                    <p className="text-gray-600 leading-relaxed">{house.description}</p>
+
+                    <div className="mt-12 border-t border-gray-200 pt-8">
+                        <h3 className="text-2xl font-semibold text-gray-800 mb-4">Ubicación</h3>
+                        <p className="text-gray-600">{house.location}</p>
+                    </div>
                 </div>
-                <Form/>
+
+                <div>
+                    <Form />
+                </div>
             </div>
-                <p>{house.location}</p>
         </main>
     )
 }
- 

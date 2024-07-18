@@ -1,55 +1,61 @@
 import Image from "next/image"
 
-
 export function Form() {
     return (
-        <div className="px-5">
-            <div className="py-4 px-3 rounded-lg shadow-light">
-                <div className="flex gap-4">
-                    <Image src="/assets/comercial.png" alt="Comercial" width={50} height={50} className="border-2 rounded-full border-secondary"/>
-                    <div>
-                        <p>Pablo Garcia</p>
-                        <p className="text-secondary font-semibold">Asesor Comercial</p>
-                    </div>
-                </div>
-                <div className="my-5">
-                    <div>
-                        <label className="text-sm text-secondary">Nombre</label>
-                        <div className="mt-2">
-                            <input type="text" name="name"
-                            className="w-full rounded-md border-0 py-1.5 text-secondary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset text-sm" />
+        <div className="sticky top-8 mt-12 lg:mt-24">
+            <div className="bg-gradient-to-br from-secondary to-purple-600 text-white rounded-xl shadow-xl overflow-hidden">
+                <div className="bg-white/10 backdrop-blur-sm p-6">
+                    <div className="flex items-center gap-4 mb-6">
+                        <Image 
+                            src="/assets/comercial.png" 
+                            alt="Comercial" 
+                            width={70} 
+                            height={70} 
+                            className="border-3 rounded-full border-white shadow-lg"
+                        />
+                        <div>
+                            <p className="font-bold text-xl">Pablo Garcia</p>
+                            <p className="font-medium text-white/80">Asesor Comercial</p>
                         </div>
                     </div>
-                </div>
-                <div className="mt-2">
-                    <label className="text-sm text-secondary">
-                        Telefono
-                    </label>
-                    <div>
-                        <input
-                            id="phone"
-                            name="phone" 
-                            type="phone"
-                            autoComplete="phone"
-                            className="w-full rounded-md border-0 py-1.5 text-secondary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset text-sm" />
-                    </div>
-                </div>
-                <div className="mt-2">
-                    <label className="text-sm text-secondary">
-                        Descripción
-                    </label>
-                    <div className="mt-2">
-                    <textarea
-                        id="descripción"
-                        rows={3} 
-                        autoComplete="phone"
-                        className="w-full rounded-md border-0 py-1.5 text-secondary shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-0 focus:ring-inset text-sm"
-                        defaultValue={''}
-                        />
-                    </div>
-                </div>
-                <div>
-                    <button className="bg-secondary px-4 py-2 text-white rounded-lg text-sm hover:bg-black">Enviar</button>
+                    <form className="space-y-4">
+                        <div>
+                            <label htmlFor="name" className="block text-sm font-medium text-white/90 mb-1">Nombre</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name"
+                                className="w-full rounded-md border-0 bg-white/20 placeholder-white/50 text-white focus:ring-2 focus:ring-white"
+                                placeholder="Tu nombre"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="phone" className="block text-sm font-medium text-white/90 mb-1">Teléfono</label>
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone" 
+                                className="w-full rounded-md border-0 bg-white/20 placeholder-white/50 text-white focus:ring-2 focus:ring-white"
+                                placeholder="Tu teléfono"
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="description" className="block text-sm font-medium text-white/90 mb-1">Mensaje</label>
+                            <textarea
+                                id="description"
+                                name="description"
+                                rows={4}
+                                className="w-full rounded-md border-0 bg-white/20 placeholder-white/50 text-white focus:ring-2 focus:ring-white"
+                                placeholder="Tu mensaje..."
+                            ></textarea>
+                        </div>
+                        <button 
+                            type="submit" 
+                            className="w-full bg-white text-secondary font-bold py-3 px-4 rounded-md hover:bg-gray-100 transition duration-300 ease-in-out transform hover:scale-105"
+                        >
+                            Contactar Ahora
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>

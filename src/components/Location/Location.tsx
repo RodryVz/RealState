@@ -6,7 +6,6 @@ import { MapContainer, TileLayer } from "react-leaflet"
 import "leaflet/dist/leaflet.css"
 import { MarkerHouse } from "./MarkerHouse"
 
-
 export function Location() {
     const coordinatePoint = {
         lat: 40.463667,
@@ -21,14 +20,25 @@ export function Location() {
     } 
 
     return (
-        <Transition className="px-4 py-8 md:py-44 md:px-36">
-            <h4 className="text-center text-secondary" id="location">Localizacion</h4>
-            <h2 className="max-w-2xl mx-auto my-4 mb-8 text-3xl font-semibold text-center">Disponible en todas partes del mundo, con la comunidad de propiedades mas grande.</h2>
+        <Transition className="px-4 py-12 md:py-24 lg:py-32 max-w-7xl mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+                <h4 className="text-secondary font-semibold text-lg mb-2" id="location">Localización</h4>
+                <h2 className="text-3xl md:text-4xl font-bold text-gray-800 max-w-3xl mx-auto">
+                    Disponible en todas partes del mundo, con la comunidad de propiedades más grande.
+                </h2>
+            </div>
 
-            <MapContainer center={coordinatePoint} zoom={6} scrollWheelZoom={false} className="h-[700px]">
-                <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png"/>
-                <MarkerHouse selectMarker={centerMarker}/>
-            </MapContainer>
+            <div className="relative rounded-lg overflow-hidden shadow-xl">
+                <MapContainer 
+                    center={coordinatePoint} 
+                    zoom={6} 
+                    scrollWheelZoom={false} 
+                    className="h-[400px] sm:h-[500px] md:h-[600px] lg:h-[700px] w-full"
+                >
+                    <TileLayer url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager_labels_under/{z}/{x}/{y}.png"/>
+                    <MarkerHouse selectMarker={centerMarker}/>
+                </MapContainer>
+            </div>
         </Transition>
     )
 }
